@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(:version => 20120613140635) do
 
   create_table "incoming_emails", :force => true do |t|
     t.string   "subject"
+    t.string   "sender"
+    t.string   "recipient"
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

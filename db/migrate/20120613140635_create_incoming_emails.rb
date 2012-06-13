@@ -3,6 +3,7 @@ class CreateIncomingEmails < ActiveRecord::Migration
     create_table :incoming_emails do |t|
       t.string :subject
       t.string :sender
+      t.string :recipient
       t.text :body
 
       t.timestamps
