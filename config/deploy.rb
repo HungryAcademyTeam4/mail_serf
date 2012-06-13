@@ -40,12 +40,12 @@ ssh_options[:forward_agent] = true
 namespace :mailman do
   desc "Mailman::Start"
   task :start, :roles => [:app] do
-    run "cd #{current_path};RAILS_ENV=#{rack_env} bundle exec script/mailman_daemon start"
+    run "cd #{current_path};RAILS_ENV=production bundle exec script/mailman_daemon start"
   end
   
   desc "Mailman::Stop"
   task :stop, :roles => [:app] do
-    run "cd #{current_path};RAILS_ENV=#{rack_env} bundle exec script/mailman_daemon stop"
+    run "cd #{current_path};RAILS_ENV=production bundle exec script/mailman_daemon stop"
   end
   
   desc "Mailman::Restart"
@@ -101,7 +101,7 @@ namespace :deploy do
   before "deploy:stop", "deploy:ensure_god_running"
   before "deploy", "deploy:mkdirs"
   before "deploy", "deploy:create_god_script"
-  #after "deploy", "deploy:db_migrate"
+  after "deploy", "deploy:db_migrate"
   after "deploy", "deploy:bundle"
   after "deploy", "deploy:start"
   after "deploy", "mailman:start"
