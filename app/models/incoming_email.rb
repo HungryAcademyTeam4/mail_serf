@@ -9,7 +9,7 @@ class IncomingEmail < ActiveRecord::Base
                              body:message.body.decoded, 
                              sender:message.from.first,
                              chatroom_id:get_chatroom_id(message.to))
-      Message.create(content:ie, user_id:"email", user:"email", chatroom_id:"")
+      Message.create(:message => {content:"Email: #{ie.subject.to_s} from #{ie.sender.to_s}", chat_room_id:get_chatroom_id(message.to)})
     end
   end
 
