@@ -4,7 +4,7 @@ class CreateIncomingEmails < ActiveRecord::Migration
       t.string :subject
       t.string :sender
       t.string :recipient
-      t.string :chatroom_id
+      t.integer :chatroom_id
       t.text :body
 
       t.timestamps

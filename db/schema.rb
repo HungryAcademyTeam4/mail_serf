@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20120613140635) do
     t.string   "subject"
     t.string   "sender"
     t.string   "recipient"
-    t.string   "chatroom_id"
+    t.integer  "chatroom_id"
     t.text     "body"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
