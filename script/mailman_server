@@ -19,7 +19,7 @@ Mailman::Application.run do
   default do 
     begin
       IncomingEmail.receive_email(message)
-      puts "Received at #{message.to}"
+      puts "#{message}"
     rescue 
       Mailman.logger.error "Exception occurred while receiving message: \n#{message}"
       Mailman.logger.error [e, *e.backtrace].join("\n")
