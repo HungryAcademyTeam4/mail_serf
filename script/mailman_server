@@ -4,6 +4,9 @@ require "rubygems"
 require "bundler/setup"
 require "mailman"
 
+ENV["RAILS_ENV"] ||= "test"
+require File.dirname(__FILE__) + "/../config/environment"
+
 Mailman.config.pop3 = {
   server: 'pop.gmail.com', port: 995, ssl: true, 
   username: ENV['GMAIL_ADDRESS'],
