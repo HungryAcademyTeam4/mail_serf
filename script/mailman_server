@@ -4,8 +4,6 @@ require "rubygems"
 require "bundler/setup"
 require "mailman"
 
-ENV["RAILS_ENV"] ||= "test"
-require File.dirname(__FILE__) + "/../config/environment"
 
 Mailman.config.pop3 = {
   server: 'pop.gmail.com', port: 995, ssl: true, 
@@ -15,9 +13,10 @@ Mailman.config.pop3 = {
 }
 
 Mailman.config.logger = Logger.new("log/mailman.log")
+Mailman.config.poll_interval = 10
 
 Mailman::Application.run do 
   default do 
-    puts "Receieved: #{message.subject} // #{message.body}"
+    puts "Receieved: #{message.subject} // #{message.body.decoded}"
   end 
 end 
