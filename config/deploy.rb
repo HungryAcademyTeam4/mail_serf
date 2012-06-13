@@ -101,8 +101,8 @@ namespace :deploy do
   before "deploy:stop", "deploy:ensure_god_running"
   before "deploy", "deploy:mkdirs"
   before "deploy", "deploy:create_god_script"
-  after "deploy", "deploy:db_migrate"
   after "deploy", "deploy:bundle"
+  after "deploy", "deploy:db_migrate"
   after "deploy", "deploy:start"
   after "deploy", "mailman:start"
 end
