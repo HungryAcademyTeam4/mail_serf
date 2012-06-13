@@ -5,7 +5,7 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,7 +26,9 @@ gem 'mail'
 gem 'maildir'
 gem 'chatbot_api', "1.0", git: "git://github.com/HungryAcademyTeam4/chatbot_api.git"
 
-
+group :development do 
+  gem 'sqlite3'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -34,10 +36,10 @@ gem 'chatbot_api', "1.0", git: "git://github.com/HungryAcademyTeam4/chatbot_api.
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
