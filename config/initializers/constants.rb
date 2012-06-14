@@ -3,5 +3,5 @@ if ENV["RAILS_ENV"] == "production"
   GMAIL_PASSWORD    = "chatpassword"
 else
   GMAIL_ADDRESS     = "fallingpostfix@gmail.com"
-  GMAIL_ADDRESS     = "13myra13"
+  GMAIL_PASSWORD    = "13myra13"
 end
