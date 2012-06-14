@@ -3,6 +3,7 @@
 require "rubygems"
 require "bundler/setup"
 require "mailman"
+require "./config/initializers/constants.rb"
 
 ENV["RAILS_ENV"] ||= "test"
 
