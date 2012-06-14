@@ -3,13 +3,13 @@
 require "rubygems"
 require "bundler/setup"
 require "mailman"
+require "config/constants.rb"
 
 ENV["RAILS_ENV"] ||= "test"
-require File.dirname(__FILE__) + "/../config/environments/production.rb"
 
 Mailman.config.ignore_stdin = true
 
-if Rails.env == 'test'
+if ENV["RAILS_ENV"] == 'test'
   Mailman.config.maildir = File.expand_path("../../tmp/test_maildir", __FILE__)
 else
   Mailman.config.pop3 = {
@@ -18,7 +18,7 @@ else
     password: ENV['GMAIL_PASSWORD']
 
   }
-  Mailman.config.logger = Logger.new("log/mailman.log")
+  Mailman.config.logger = Logger.new("/mailman_daemon.log")
   Mailman.config.poll_interval = 10
 end
 

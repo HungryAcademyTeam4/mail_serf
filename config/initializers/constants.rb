@@ -1,7 +1,7 @@
-if Rails.env == "production"
-  MAILMAN_USER     = "conquerchat@gmail.com"
-  MAILMAN_PASSWORD = "chatpassword"
+if ENV["RAILS_ENV"] == "production"
+  GMAIL_ADDRESS     = "conquerchat@gmail.com"
+  GMAIL_PASSWORD    = "chatpassword"
 else
-  MAILMAN_USER     = "fallingpostfix@gmail.com"
-  MAILMAN_PASSWORD = "13myra13"
+  GMAIL_ADDRESS     = "fallingpostfix@gmail.com"
+  GMAIL_ADDRESS     = "13myra13"
 end
