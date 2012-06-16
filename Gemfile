@@ -26,8 +26,8 @@ gem 'mail'
 gem 'maildir'
 gem 'chatbot_api', "1.0", git: "git://github.com/HungryAcademyTeam4/chatbot_api.git"
 
-group :development do 
-  gem 'sqlite3'
+group :development do
+  gem 'mysql2'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
