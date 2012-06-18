@@ -43,6 +43,7 @@ namespace :mailman do
   desc "Mailman::Start"
   task :start, :roles => [:app] do
     run "cd #{current_path};RAILS_ENV=production bundle exec ruby script/mailman_daemon start"
+    run "cd #{current_path};RAILS_ENV=production bundle exec ruby script/mailman_server start"
   end
   
   desc "Mailman::Stop"
