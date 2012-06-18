@@ -15,6 +15,8 @@ START_COMMAND = "unicorn /apps/#{APPLICATION_NAME}/current/config.ru -p 3020"
 # If you want to launch to Falling Garden, launch with
 # DEPLOY_MODE="staging" cap deploy
 
+#####~~~!!!!~~~MAKE SEPARATE GOD SCRIPT FOR DAEMON~~~!!!~~~~#######
+
 PRODUCTION_SERVER = "fallingfoundry.com"
 STAGING_SERVER = "fallinggarden.com"
 MODE = ENV["DEPLOY_MODE"] || "production"
