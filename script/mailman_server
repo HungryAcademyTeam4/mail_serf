@@ -3,7 +3,7 @@
 require "rubygems"
 require "bundler/setup"
 require "mailman"
-require "./config/initializers/constants.rb"
+require File.dirname(__FILE__) + "/../config/initializers/constants.rb"
 
 ENV["RAILS_ENV"] ||= "test"
 
@@ -18,7 +18,7 @@ else
     password: GMAIL_PASSWORD
 
   }
-  Mailman.config.logger = Logger.new("/mailman_daemon.log")
+  Mailman.config.logger = Logger.new("/tmp/mailman_daemon.log")
   Mailman.config.poll_interval = 10
 end
 
